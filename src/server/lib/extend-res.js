@@ -29,6 +29,7 @@ export default function extendRes (req, res, done) {
     if (req.body?.json === 'true') {
       return res.json({ url })
     }
+    console.log('redir', url)
     res.status(302).setHeader('Location', url)
     return res.end()
   }
